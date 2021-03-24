@@ -1,6 +1,6 @@
     <div class="row header">
         <div>
-            <img src="/img/leftLogo.png" alt="">
+            <img src="/img/leftA2.png" alt="">
         </div>
         <div> <p> Georgia </p> </div>
         <div>
@@ -13,7 +13,8 @@
       </div>
       <div>
         <p>
-            Proof of competion of the online training
+            Proof of competion of the online training</br>
+            Remote pilot certificate of competency
         </p>
       </div>
     </div>
@@ -35,6 +36,25 @@
         </div>
       </div>
       <div class="right">
-        
+        <div id="qrcode"></div>
       </div>
     </div>
+    <script src="/js/qrcode.min.js"></script>
+    <script>
+        //var qrdata = document.getElementById('qr-data');
+        var qrcode = new QRCode(document.getElementById('qrcode'),{
+            text: "https://uas.gov.ge/account",
+            width: 60,
+            height: 60,
+            colorDark : "#ffc100",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+        
+        function generateQR() {
+            var data = 'https://uas.gov.ge';
+            qrcode.makeCode(data);
+        }
+
+        generateQR();
+    </script>
